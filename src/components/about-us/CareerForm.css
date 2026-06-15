@@ -1,0 +1,167 @@
+/* Background Section */
+.career-section {
+  /* min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  padding: 80px 20px; */
+  background: #000;
+  padding: 80px 20px;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Main Box */
+.career-container {
+  /* width: 100%;
+  max-width: 1000px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex; */
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+
+}
+
+/* Left Side Form */
+.career-form {
+  flex: 2;
+  background: #f3f3f3;
+  padding: 50px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px 50px;
+}
+
+/* Labels */
+.input-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.input-group label span {
+  color: red;
+}
+
+/* Inputs */
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="tel"] {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #f5a300;
+  background: transparent;
+  padding: 10px 0;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-bottom: 2px solid #000;
+}
+
+/* File Upload */
+.input-group input[type="file"] {
+  margin-bottom: 15px;
+}
+
+/* Full Width Fields */
+.full-width {
+  margin-top: 50px;
+}
+
+/* Textarea */
+textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #f5a300;
+  background: transparent;
+  resize: none;
+  outline: none;
+  font-size: 16px;
+  padding: 10px 0;
+}
+
+/* Submit Button */
+.submit-btn {
+  margin-top: 50px;
+  width: 150px;
+  height: 52px;
+  border: 2px solid #f5a300;
+  border-radius: 40px;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #f5a300;
+  color: #fff;
+}
+
+/* Right Side Contact Card */
+.contact-card {
+  width: 380px;
+  background: #fcb400;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+  text-align: center;
+}
+
+.contact-card h2 {
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.phone-icon {
+  font-size: 48px;
+  margin-bottom: 25px;
+}
+
+.contact-card h3 {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .career-container {
+    flex-direction: column;
+  }
+
+  .contact-card {
+    width: 100%;
+    min-height: 250px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .career-form {
+    padding: 30px 20px;
+  }
+}

@@ -1,0 +1,28 @@
+.career-hero {
+  width: 100%;
+  height: auto;
+}
+
+.career-hero img {
+  width: 100%;
+  aspect-ratio: 3/1.5;
+  height: auto;
+}
+
+.career-hero .bg-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2/1;
+  height: auto;
+  overflow: hidden;
+}
+
+.career-hero .bg-video video {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

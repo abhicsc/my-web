@@ -1,0 +1,369 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+.video-section {
+  width: 100%;
+  min-height: 100vh;
+  background: #050505;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =====================================================
+   ANIMATED BACKGROUND GLOW
+===================================================== */
+
+.video-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 81, 255, 0.32) 0%,
+    rgba(0, 81, 255, 0.12) 25%,
+    transparent 70%
+  );
+  filter: blur(100px);
+  animation: glowPulse 6s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes glowPulse {
+  from {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1.15) rotate(10deg);
+    opacity: 1;
+  }
+}
+
+/* =====================================================
+   FLOATING PARTICLES
+===================================================== */
+
+.video-section::before,
+.video-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  animation: floatingDots 8s infinite ease-in-out alternate;
+}
+
+.video-section::before {
+  width: 80px;
+  height: 80px;
+  top: 15%;
+  left: 10%;
+}
+
+.video-section::after {
+  width: 80px;
+  height: 80px;
+  bottom: 10%;
+  right: 12%;
+  animation-duration: 10s;
+}
+
+@keyframes floatingDots {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-30px);
+  }
+}
+
+/* =====================================================
+   VIDEO CONTAINER
+===================================================== */
+
+.video-container {
+  width: 88%;
+  max-width: 1200px;
+  height: 720px;
+  border-radius: 35px;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+  animation: fadeUp 1s ease;
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.8),
+    0 0 80px rgba(0, 81, 255, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  transition: 0.5s ease;
+}
+
+.video-container:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.9),
+    0 0 120px rgba(0, 81, 255, 0.25);
+}
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.06);
+  animation: zoomVideo 14s ease-in-out infinite alternate;
+  filter: brightness(0.72) contrast(1.05) saturate(1.1);
+}
+
+@keyframes zoomVideo {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1.14);
+  }
+}
+
+/* =====================================================
+   DARK OVERLAY
+===================================================== */
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.45)
+    );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Animated Overlay Shine */
+
+.video-overlay::before {
+  content: "";
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.04),
+    transparent
+  );
+  transform: rotate(20deg);
+  animation: shine 8s linear infinite;
+}
+
+@keyframes shine {
+  from {
+    transform: translateX(-60%) rotate(20deg);
+  }
+  to {
+    transform: translateX(60%) rotate(20deg);
+  }
+}
+
+/* =====================================================
+   CONTENT BOX
+===================================================== */
+
+.content-box {
+  width: 56%;
+  padding: 55px;
+  border-radius: 30px;
+  background: rgba(15, 15, 15, 0.48);
+  backdrop-filter: blur(18px);
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(255, 255, 255, 0.04),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  animation:
+    contentFade 1.2s ease,
+    floatingCard 5s ease-in-out infinite alternate;
+}
+
+/* Glass Reflection */
+
+.content-box::before {
+  content: "";
+  position: absolute;
+  width: 180%;
+  height: 180%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.08),
+    transparent
+  );
+  top: -40%;
+  left: -140%;
+  transform: rotate(25deg);
+  animation: glassMove 7s linear infinite;
+}
+
+@keyframes glassMove {
+  from {
+    left: -140%;
+  }
+  to {
+    left: 120%;
+  }
+}
+
+/* Floating Card */
+
+@keyframes floatingCard {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+/* =====================================================
+   TEXT STYLING
+===================================================== */
+
+.content-box h1 {
+  font-size: 40px;
+  line-height: 1.15;
+  font-weight: 800;
+  margin-bottom: 28px;
+  letter-spacing: -2px;
+  text-shadow:
+    0 5px 20px rgba(0,0,0,0.45),
+    0 0 40px rgba(255,255,255,0.08);
+  animation: textReveal 1s ease;
+}
+
+.content-box p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.82);
+  font-weight: 400;
+  animation: textReveal 1.2s ease;
+}
+
+/* =====================================================
+   TEXT ANIMATION
+===================================================== */
+
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contentFade {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 1200px) {
+  .video-container {
+    height: 620px;
+  }
+
+  .content-box {
+    width: 70%;
+  }
+
+  .content-box h1 {
+    font-size: 40px;
+  }
+
+  .content-box p {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-section {
+    padding: 50px 15px;
+  }
+
+  .video-container {
+    width: 100%;
+    height: 500px;
+    border-radius: 25px;
+  }
+
+  .content-box {
+    width: 90%;
+    padding: 35px 22px;
+  }
+
+  .content-box h1 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .content-box p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-container {
+    height: 420px;
+    border-radius: 20px;
+  }
+
+  .content-box {
+    padding: 25px 18px;
+    border-radius: 18px;
+  }
+
+  .content-box h1 {
+    font-size: 24px;
+  }
+
+  .content-box p {
+    font-size: 13px;
+  }
+}
