@@ -1,4 +1,4 @@
-import VideoSection from "../components/about-us/videosection";
+import VideoSection from "../components/about-us/VideoSection";
 import JoinOurTeam from "../components/about-us/JoinOurTeam";
 import CareerForm from "../components/about-us/CareerForm";
 
